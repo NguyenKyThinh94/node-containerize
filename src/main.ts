@@ -11,4 +11,13 @@ async function bootstrap() {
   );
   await app.listen(3333);
 }
+function handle(signal) {
+  console.log(
+    `*^!@4=> Received event: ${signal}`,
+  );
+}
+process.on('SIGHUP', handle);
+process.on('SIGTERM', handle);
+process.on('SIGINT', handle);
+
 bootstrap();
