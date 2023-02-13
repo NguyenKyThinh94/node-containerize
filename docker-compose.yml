@@ -13,7 +13,7 @@ services:
   server:
     container_name: server
     depends_on:
-      - postgres
+      - db
     build:
       context: .
       dockerfile: ./Dockerfile
